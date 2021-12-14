@@ -220,7 +220,7 @@ return order
 
 
 
-module.exports.addOrder = (reqBody, userData) => {
+module.exports.addOrder = (userData) => {
 
     return Order.findById(userData.id).then(result => {
 
@@ -228,11 +228,11 @@ module.exports.addOrder = (reqBody, userData) => {
             return "You are an admin can't add order"
         } else {
             let newOrder = new Order({
-            	email: reqBody.email,
-                name: reqBody.name,
-                price: reqBody.price,
-                quantity: reqBody.quantity,
-                totalAmount: reqBody.price * reqBody.quantity
+            	email: result.email,
+                name: result.name,
+                price: result.price,
+                quantity: result.quantity,
+                totalAmount: result.price * result.quantity
             })
         
             //Saves the created object to the database

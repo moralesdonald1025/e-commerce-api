@@ -116,7 +116,7 @@ router.post("/addOrder", auth.verify, (req, res) => {
 
 
 
-	orderController.addOrder(req.body, userData).then(resultFromController => res.send(resultFromController))
+	orderController.addOrder(userData).then(resultFromController => res.send(resultFromController))
 })
 
 
