@@ -29,7 +29,7 @@ module.exports.createOrder = (req, res) => {
 }
 
 
-module.exports.order = async (data) => {
+/*module.exports.order = async (data) => {
 	//Add the product ID in the orders array of the user
 	let isUserUpdated = await User.findById(data.userId).then(user => {
 		// Add the productId in the user's orders array
@@ -64,7 +64,7 @@ module.exports.order = async (data) => {
 	}else{
 		return false
 	}
-}
+}*/
 
 //dito end
 
