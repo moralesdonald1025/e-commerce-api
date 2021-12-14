@@ -10,6 +10,9 @@ quantity: { type: Number, default: 1, required: true },
 totalAmount: {
 	type: Number
 },
+price: {
+	type: Number
+},
 purchasedOn: {
 	type: Date
 },
