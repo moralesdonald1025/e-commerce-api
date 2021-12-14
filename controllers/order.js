@@ -201,3 +201,68 @@ return order
 }
 
 )}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+module.exports.addOrder = (reqBody, userData) => {
+
+    return Order.findById(userData.userId).then(result => {
+
+        if (userData.isAdmin == false) {
+            return "You are an admin can't add order"
+        } else {
+            let newOrder = new Order({
+            	email: reqBody.email
+                name: reqBody.name,
+                price: reqBody.price,
+                quantity: reqBody.quantity,
+                totalAmount: reqBody.price * reqBody.quantity
+            })
+        
+            //Saves the created object to the database
+            return newOrder.save().then((order, error) => {
+                //if Product creation failed
+                if(error) {
+                    return false
+                } else {
+                    //Product creation successful
+                    return "Order creation successful"
+                }
+            })
+        }
+        
+    });    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

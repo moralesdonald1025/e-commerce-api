@@ -30,6 +30,9 @@ const userSchema = new Schema({
 		},
 		price: {
 			type: Number
+		},
+		totalAmount: {
+			type:Number
 		}
 	}
 	]

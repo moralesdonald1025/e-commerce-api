@@ -105,6 +105,28 @@ router.get("/users/orders", auth.verify, (req, res) => {
 
 
 
+////
+
+
+router.post("/addOrder", auth.verify, (req, res) => {
+
+	const userData = 
+		auth.decode(req.headers.authorization)
+	
+
+
+
+	productController.addOrder(req.body, {userData: userData.id, isAdmin:userData.isAdmin}).then(resultFromController => res.send(resultFromController))
+})
+
+
+
+
+
+
+
+
+
 
 
 
