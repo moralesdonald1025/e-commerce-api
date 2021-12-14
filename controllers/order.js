@@ -222,7 +222,7 @@ return order
 
 module.exports.addOrder = (reqBody, userData) => {
 
-    return Order.findById(userData.userId).then(result => {
+    return Order.findById(userData).then(result => {
 
         if (userData.isAdmin == false) {
             return "You are an admin can't add order"
