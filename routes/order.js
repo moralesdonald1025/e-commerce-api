@@ -16,7 +16,8 @@ router.post("/users/checkout", (req, res, next) => {
 		_id: mongoose.Types.ObjectId(),
 		quantity: req.body.quantity,
 		product: req.body.productId,
-		totaAmount: req.body.productId.price,
+		userId: req.body.userId,
+		price: req.body.productId.price,
 		purchasedOn: new Date
 	});
 	order

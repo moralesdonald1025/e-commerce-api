@@ -17,12 +17,13 @@ const Order = require("../models/Order")
     })
     .catch(err => console.log(err));
 };*/
-
+//dito start ng paghide
 
 module.exports.createOrder = (req, res) => {
 	return Order.find({ "user.userId": req.user._id }).then(result => {
 		return result;
 	})
+
 }
 
 
@@ -62,6 +63,10 @@ module.exports.order = async (data) => {
 		return false
 	}
 }
+
+//dito end
+
+
 
 
 module.exports.getAllOrders = () => {
@@ -103,3 +108,48 @@ module.exports.getAllOrders = () => {
         
     });    
 }*/
+
+
+
+
+
+
+/*module.exports.createOrder = (req, res) => {
+	return Order.find({ "user.userId": req.user._id }).then(result => {
+		return result;
+	})
+
+}
+
+
+///////////////////////
+module.exports.createOrder = async (req, res) => {
+	let isOrderUpdated = await Order.find(data.userId).then(user => {
+		return result;
+	})
+
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

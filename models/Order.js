@@ -12,6 +12,9 @@ totalAmount: {
 },
 purchasedOn: {
 	type: Date
+},
+userId: {
+	type: mongoose.Schema.Types.ObjectId, ref: "product"
 }
 
 })
