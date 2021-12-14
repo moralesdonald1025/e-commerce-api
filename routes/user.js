@@ -37,7 +37,10 @@ router.get("/details", auth.verify, (req, res) => {
 router.post("/orders", auth.verify, (req, res) => {
 	let data = {
 		userId: req.body.userId,
-		productId: req.body.productId
+		productId: req.body.productId,
+		price: req.body.price,
+		quantity: req.Body.quantity,
+		totalAmount: req.Body.price * req.body.price
 	}
 	userController.order(data).then(resultFromController => res.send(resultFromController));
 })

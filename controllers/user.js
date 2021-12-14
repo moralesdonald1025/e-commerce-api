@@ -99,9 +99,13 @@ module.exports.getProfile = (data) => {
 module.exports.order = async (data) => {
 	//Add the product ID in the orders array of the user
 	let isUserUpdated = await User.findById(data.userId).then(user => {
-		// Add the productId in the user's orders array
+
+		if(data.isAdmin){
+			return "Can't order you are an admin"
+		}else{
+
 		user.orders.push({productId: data.productId})
-		//Save the updated user information in the database
+	
 		return user.save().then((user, error) => {
 			if (error){
 				return false;
@@ -109,11 +113,15 @@ module.exports.order = async (data) => {
 				return true;
 			}
 		})
-	})
+	}})
 
-	//Add the user ID in the enrollees array in the course
 	let isProductUpdated = await Product.findById(data.productId).then(product => {
-		//Adds the userId in the course's enrollees array
+		
+
+if(data.isAdmin){
+			return "Can't order you are an admin"
+		}else{
+
 		product.orderers.push({userId: data.userId})
 
 		// Save the updated course information in the database
@@ -124,7 +132,7 @@ module.exports.order = async (data) => {
 				return true
 			}
 		})
-	})
+	}})
 
 
 	//Condition that will check if the user and course documents have been updated
@@ -134,35 +142,7 @@ module.exports.order = async (data) => {
 		return false
 	}
 
-//add the order id to the order routes
-/*let isOrderUpdated = await Order.findById(data.userId).then(order => {
-	order.order.push({userId: data.userId})
 
-return order.save().then((order, error) => {
-			if(error){
-				return false;
-			}else{
-				return true
-			}
-		})
-	})
-
-
-	//Condition that will check if the user and course documents have been updated
-
-
-
-
-
-
-
-
-
-	if(isOrderUpdated && isProductUpdated && isUserUpdated){
-		return true;
-	}else{
-		return false
-	}*/
 }
 
 
@@ -231,6 +211,27 @@ return false
 }
 })
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

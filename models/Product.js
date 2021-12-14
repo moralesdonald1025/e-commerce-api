@@ -37,6 +37,12 @@ const productSchema = new mongoose.Schema({
 		type: Date,
 		default: new Date()
 	}
+	},
+	totalAmount: {
+		type: Number,
+	},
+	price: {
+		type: Number
 	}
 	]
 })

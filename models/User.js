@@ -28,6 +28,9 @@ const userSchema = new Schema({
 			type: String,
 			default: "Ordered"
 		},
+		quantity: {
+			type: Number
+		}
 		price: {
 			type: Number
 		},
