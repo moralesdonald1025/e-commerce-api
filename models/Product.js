@@ -36,7 +36,7 @@ const productSchema = new mongoose.Schema({
 	purchasedOn: {
 		type: Date,
 		default: new Date()
-	}
+	
 	},
 	totalAmount: {
 		type: Number,
@@ -44,6 +44,7 @@ const productSchema = new mongoose.Schema({
 	price: {
 		type: Number
 	}
+}
 	]
 })
 

@@ -100,9 +100,7 @@ module.exports.order = async (data) => {
 	//Add the product ID in the orders array of the user
 	let isUserUpdated = await User.findById(data.userId).then(user => {
 
-		if(data.isAdmin){
-			return "Can't order you are an admin"
-		}else{
+		
 
 		user.orders.push({productId: data.productId})
 	
@@ -113,14 +111,12 @@ module.exports.order = async (data) => {
 				return true;
 			}
 		})
-	}})
+	})
 
 	let isProductUpdated = await Product.findById(data.productId).then(product => {
 		
 
-if(data.isAdmin){
-			return "Can't order you are an admin"
-		}else{
+
 
 		product.orderers.push({userId: data.userId})
 
@@ -132,7 +128,7 @@ if(data.isAdmin){
 				return true
 			}
 		})
-	}})
+	})
 
 
 	//Condition that will check if the user and course documents have been updated
