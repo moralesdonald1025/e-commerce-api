@@ -134,7 +134,7 @@ router.get("/users/myOrders", auth.verify, (req, res) => {
 /*const userData = auth.decode(req.headers.authorization)	*/
 
 
-	orderController.getMyOrders(userData, req.body).then(resultFromController => res.send(resultFromController))
+	orderController.getMyOrders({email: reqBody.email}).then(resultFromController => res.send(resultFromController))
 })
 
 
