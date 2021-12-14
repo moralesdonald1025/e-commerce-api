@@ -24,8 +24,8 @@ router.post("/users/checkout", (req, res, next) => {
 	.save()
 	
 	.then(result => {
-		console.log(result);
-		res.status(201).json(result);
+		console.log(result.price);
+		res.status(201).json(result.price);
 	})
 	.catch(err => {
 		console.log(err);

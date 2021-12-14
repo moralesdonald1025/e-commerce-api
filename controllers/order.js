@@ -21,9 +21,9 @@ const Order = require("../models/Order")
 
 module.exports.createOrder = (req, res) => {
 	return Order.find({ "user.userId": req.user._id }).then(result => {
-		let totalAmount  = result.quantity * result.price;
+		let result.totalAmount  = result.quantity * result.price;
 
-		return totalAmount;
+		return result.totalAmount;
 	})
 
 }
