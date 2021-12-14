@@ -19,14 +19,14 @@ const Order = require("../models/Order")
 };*/
 //dito start ng paghide
 
-module.exports.createOrder = (req, res) => {
+/*module.exports.createOrder = (req, res) => {
 	return Order.find({ "user.userId": req.user._id }).then(result => {
 		let totalAmount  = result.quantity * result.price;
 
 		return totalAmount;
 	})
 
-}
+}*/
 
 
 /*module.exports.order = async (data) => {
