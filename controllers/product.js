@@ -133,7 +133,7 @@ module.exports.archieveProduct = (reqParams, userData, reqBody) => {
 
 return Product.findById(reqParams.productId).then(product => {
 if(userData.isAdmin){
-		product.isctive = false
+		product.isActive = false
 
 return product.save().then((saved, err) => {
 if(err){
