@@ -137,24 +137,15 @@ module.exports.createOrder = async (req, res) => {
 
 //get all orders starts here
 
+module.exports.getAllOrders = (userData) => {
 
+return Order.findById({}).then(order => {
+if(userData.isAdmin){
+return order
+}else{
+	return "Cant get all orders you are not an admin"
+}
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+)}

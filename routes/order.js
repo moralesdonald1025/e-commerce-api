@@ -84,7 +84,7 @@ router.post("/createOrder", auth.verify, (req, res) => {
 
 //retrieve all orders admin only
 //get method
-router.get("/", auth.verify, (req, res) => {
+router.get("/users/orders", auth.verify, (req, res) => {
 
 	const userData = 
 		auth.decode(req.headers.authorization)
