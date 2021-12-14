@@ -195,12 +195,12 @@ module.exports.getAllOrders =(reqBody) => {
 			return "You are not an admin can't assign another user as Admin"
 		}else {
 			return reqBody.isAdmin =success
-			/*return User.findById(req.params.userId).then(result => {
+			return User.findById(req.params.userId).then(result => {
 				return result.isAdmin = true
-			})*/
-		}/*else{
+			})
+		}else{
 			return false
-		}*/
+		}
 	})*/
 
 
