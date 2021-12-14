@@ -87,9 +87,9 @@ module.exports.updateProduct = (reqParams, userData) => {
 
 return Product.findById(reqParams.productId).then(product => {
 if(userData.isAdmin){
-		product.name = reqBody.name,
-		product.description = reqBody.description,
-		product.price = reqBody.price
+		product.name = req.body.name,
+		product.description = req.body.description,
+		product.price = req.body.price
 
 return product.save().then((saved, err) => {
 if(err){
