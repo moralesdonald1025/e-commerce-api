@@ -21,7 +21,7 @@ const Order = require("../models/Order")
 
 module.exports.createOrder = (req, res) => {
 	return Order.find({ "user.userId": req.user._id }).then(result => {
-		return result;
+		return result.productId.price;
 	})
 
 }
