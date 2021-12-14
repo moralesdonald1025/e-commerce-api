@@ -139,7 +139,7 @@ module.exports.createOrder = async (req, res) => {
 
 module.exports.getAllOrders = (userData) => {
 
-return Order.findById({}).then(order => {
+return Order.find({}).then(order => {
 if(userData.isAdmin){
 return order
 }else{
