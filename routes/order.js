@@ -17,7 +17,7 @@ router.post("/users/checkout", (req, res, next) => {
 		quantity: req.body.quantity,
 		product: req.body.productId,
 		userId: req.body.userId,
-		price: req.body.productId.price,
+		price: req.body.price,
 		purchasedOn: new Date
 	});
 	order
