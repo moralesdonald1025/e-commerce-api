@@ -215,7 +215,7 @@ return order
 
 
 
-module.exports.getMyOrders = (reqBody) => {
+module.exports.getMyOrders = (reqBody, userData) => {
 	return Order.find({ userId: reqBody.userId }).then(result => {
 		if(result.length > 0){
 			return result
