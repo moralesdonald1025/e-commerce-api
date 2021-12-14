@@ -215,18 +215,17 @@ return order
 
 
 
-module.exports.getAMyOrders = (userData, reqBody) => {
+module.exports.getMyOrders = (reqBody) => {
+	return Order.find({ userId: reqBody.userId }).then(result => {
+		if(result.length > 0){
+			return result
 
-return Order.find(reqBody.userId).then(order => {
-if(userData.userId == reqBody.userId){
-return order
-}else{
-	return false
+		}else{
+			
+			return false;
+		}
+	})
 }
-
-}
-
-)}
 
 
 
