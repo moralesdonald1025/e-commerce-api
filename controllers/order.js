@@ -220,7 +220,7 @@ return order
 
 
 
-/*module.exports.addOrder = (reqBody, userData) => {
+module.exports.addOrder = (reqBody, userData) => {
 
     return Order.findById(userData.userId).then(result => {
 
@@ -228,7 +228,7 @@ return order
             return "You are an admin can't add order"
         } else {
             let newOrder = new Order({
-            	email: reqBody.email
+            	email: reqBody.email,
                 name: reqBody.name,
                 price: reqBody.price,
                 quantity: reqBody.quantity,
@@ -249,7 +249,7 @@ return order
         
     });    
 }
-*/
+
 
 
 
