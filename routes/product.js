@@ -4,7 +4,7 @@ const productController = require("../controllers/product");
 const auth = require("../auth")
 
 
-router.post("/", auth.verify, (req, res) => {
+router.post("/products", auth.verify, (req, res) => {
 
 	const userData = 
 		auth.decode(req.headers.authorization)
