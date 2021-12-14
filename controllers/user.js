@@ -188,20 +188,20 @@ module.exports.getAllOrders =(reqBody) => {
 
 //setAsAdmin
 
-/*module.exports.setAsAdmin = (reqParams, reqBody, userData) => {
+module.exports.setAsAdmin = (reqParams, reqBody, userData) => {
 	
 	return User.findById(userData.userId, reqBody).then(result => {
 		if(userData.isAdmin == false){
 			return "You are not an admin can't assign another user as Admin"
 		}else {
 			return reqBody.isAdmin =success
-			return User.findById(req.params.userId).then(result => {
+			/*return User.findById(req.params.userId).then(result => {
 				return result.isAdmin = true
 			})
 		}else{
-			return false
+			return false*/
 		}
-	})*/
+	})
 
 	/*let setAsAdmin = {
 		isAdmin: true
