@@ -18,7 +18,7 @@ router.post("/products", auth.verify, (req, res) => {
 
 
 //retrive all products
-router.get("/all", (req, res) => {
+router.get("/products", (req, res) => {
 	productController.getAllProducts().then(resultFromController => res.send(resultFromController));
 })
 
