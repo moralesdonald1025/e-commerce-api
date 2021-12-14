@@ -203,46 +203,9 @@ module.exports.getAllOrders =(reqBody) => {
 		}
 	})*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	/*let setAsAdmin = {
 		isAdmin: true
-	}*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	}
 
 
 //find by id and update
@@ -253,7 +216,7 @@ return User.findByIdAndUpdate(reqParams.userId, setAsAdmin).then((user, error) =
 		return true
 	}
 })
-}
+*/
 
 
 
