@@ -93,7 +93,7 @@ if(userData.isAdmin){
 
 return product.save().then((saved, err) => {
 if(err){
-return false
+return err
 }
 else{
 return true
