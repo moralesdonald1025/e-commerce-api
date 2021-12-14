@@ -16,6 +16,7 @@ const Order = require("../models/Order")
 router.post("/users/checkout", (req, res, next) => {
 	let order = new Order({
 		_id: mongoose.Types.ObjectId(),
+		email: req.body.email,
 		quantity: req.body.quantity,
 		product: req.body.productId,
 		userId: req.body.userId,
