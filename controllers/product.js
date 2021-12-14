@@ -116,7 +116,7 @@ return false
 //update product end here
 //archieve inactive product
 
-module.exports.archieveProduct = (reqParams, reqBody) => {
+/*module.exports.archieveProduct = (reqParams, reqBody) => {
 	let archievedProduct = {
 		isActive: false
 	}
@@ -128,9 +128,31 @@ return Product.findByIdAndUpdate(reqParams.productId, archievedProduct).then((pr
 		return true
 	}
 })
+}*/
+module.exports.archieveProduct = (reqParams, userData, reqBody) => {
+
+return Product.findById(reqParams.productId).then(product => {
+if(userData.isAdmin){
+		product.isctive = false
+
+return product.save().then((saved, err) => {
+if(err){
+return err
+}
+else{
+return true
+}
+})
+}
+else{
+return false
+}
+})
 }
 
 
+
+//archieve product ends here
 
 
 

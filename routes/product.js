@@ -53,13 +53,22 @@ router.put("/products/:productId", auth.verify, (req, res) => {
 
 //update a product ends here
 
-router.put("/:productId/archieve", auth.verify, (req, res) => {
+/*router.put("/products/:productId/archive", auth.verify, (req, res) => {
 	productController.archieveProduct(req.params, req.body).then(resultFromController => res.send(resultFromController))
+})*/
+
+
+router.put("/products/:productId/archive", auth.verify, (req, res) => {
+
+
+	const userData = auth.decode(req.headers.authorization)
+
+	productController.archieveProduct(req.params, userData, req.body).then(resultFromController => res.send(resultFromController))
 })
 
 
 
-
+//archive product ends here
 
 
 module.exports = router;
