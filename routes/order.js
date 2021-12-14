@@ -124,6 +124,19 @@ router.get("/users/orders", auth.verify, (req, res) => {
 
 
 
+router.get("/users/myOrders", auth.verify, (req, res) => {
+
+	const userData = 
+		auth.decode(req.headers.authorization)
+	
+
+/*const userData = auth.decode(req.headers.authorization)	*/
+
+
+	orderController.getMyOrders(userData, req.body).then(resultFromController => res.send(resultFromController))
+})
+
+
 
 
 

@@ -207,6 +207,35 @@ return order
 
 
 
+////////
+
+
+
+
+
+
+
+module.exports.getAMyOrders = (userData, reqBody) => {
+
+return Order.find(reqBody.userId).then(order => {
+if(userData.userId == reqBody.userId){
+return order
+}else{
+	return false
+}
+
+}
+
+)}
+
+
+
+
+
+
+
+
+
 
 
 
