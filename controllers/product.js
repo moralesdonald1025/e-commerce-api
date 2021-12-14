@@ -87,7 +87,7 @@ return Product.findByIdAndUpdate(reqParams.productId, updatedProduct).then((prod
 
 module.exports.archieveProduct = (reqParams, reqBody) => {
 	let archievedProduct = {
-		isActive: reqBody.isActive
+		isActive: false
 	}
 //find by id and update
 return Product.findByIdAndUpdate(reqParams.productId, archievedProduct).then((product, error) => {

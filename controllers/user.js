@@ -186,7 +186,21 @@ module.exports.getAllOrders =(reqBody) => {
 }
 
 
+//setAsAdmin
 
+module.exports.setAsAdmin = (reqParams, reqBody) => {
+	let setAsAdmin = {
+		isAdmin: true
+	}
+//find by id and update
+return User.findByIdAndUpdate(reqParams.userId, setAsAdmin).then((user, error) => {
+	if(error){
+		return false;
+	}else{
+		return true
+	}
+})
+}
 
 
 
