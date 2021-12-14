@@ -13,7 +13,7 @@ const Order = require("../models/Order")
 //let do this order
 
 //starts of temporary hide
-/*router.post("/users/checkout", (req, res, next) => {
+router.post("/users/checkout", (req, res, next) => {
 	let order = new Order({
 		_id: mongoose.Types.ObjectId(),
 		quantity: req.body.quantity,
@@ -37,7 +37,7 @@ const Order = require("../models/Order")
 		})
 	
 	});
-});*/
+});
 
 //temporary hide only
 
@@ -64,7 +64,7 @@ router.post("/addOrder", auth.verify, (req, res) => {
 //ends of tempo hide
 
 
-router.post("/users/checkout", auth.verify, (req, res) => {
+router.post("/users/checkout", (req, res) => {
 
 	const userData = 
 		auth.decode(req.headers.authorization)
