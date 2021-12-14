@@ -188,7 +188,7 @@ module.exports.getAllOrders =(reqBody) => {
 
 //setAsAdmin
 
-module.exports.setAsAdmin = (reqParams, reqBody, userData) => {
+/*module.exports.setAsAdmin = (reqParams, reqBody, userData) => {
 	
 	return User.findById(userData.userId, reqBody).then(result => {
 		if(userData.isAdmin == false){
@@ -201,7 +201,7 @@ module.exports.setAsAdmin = (reqParams, reqBody, userData) => {
 		}/*else{
 			return false
 		}*/
-	})
+	})*/
 
 
 
