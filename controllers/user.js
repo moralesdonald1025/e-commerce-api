@@ -247,7 +247,7 @@ module.exports.setAsAdmin = (reqParams, userData) => {
 
 return User.findById(reqParams.userId).then(user => {
 if(userData.isAdmin){
-user.id = true
+user.isAdmin = true
 return user.save().then((saved, err) => {
 if(err){
 return false
