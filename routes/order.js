@@ -11,7 +11,9 @@ const Order = require("../models/Order")
 
 
 //let do this order
-router.post("/users/checkout", (req, res, next) => {
+
+//starts of temporary hide
+/*router.post("/users/checkout", (req, res, next) => {
 	let order = new Order({
 		_id: mongoose.Types.ObjectId(),
 		quantity: req.body.quantity,
@@ -35,29 +37,19 @@ router.post("/users/checkout", (req, res, next) => {
 		})
 	
 	});
-});
+});*/
 
-
+//temporary hide only
 
 //Route to order a user to a product
-
-router.post("/orders", auth.verify, (req, res) => {
-	let data = {
-		userId: req.body.userId,
-		productId: req.body.productId,
-		
-	}
-	userController.order(data).then(resultFromController => res.send(resultFromController));
-})
-
-
+//tempo hide also
 //
 
-router.get("/", (req, res) => {
+/*router.get("/", (req, res) => {
 	orderController.getAllOrders().then(resultFromController => res.send(resultFromController));
-})
+})*/
 
-
+/*
 router.post("/addOrder", auth.verify, (req, res) => {
 
 	const userData = 
@@ -68,6 +60,21 @@ router.post("/addOrder", auth.verify, (req, res) => {
 
 	productController.addOrder(req.body, {userData: userData.id, isAdmin:userData.isAdmin}).then(resultFromController => res.send(resultFromController))
 })
+*/
+//ends of tempo hide
+
+
+router.post("/users/checkout", auth.verify, (req, res) => {
+
+	const userData = 
+		auth.decode(req.headers.authorization)
+	
+
+
+
+	orderController.createOrder(req.body, userData).then(resultFromController => res.send(resultFromController))
+})
+
 
 
 

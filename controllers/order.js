@@ -8,6 +8,58 @@ const Order = require("../models/Order")
 
 
 
+////start dito headache
+
+
+/*module.exports.getAllOrders = (userData) => {
+
+return Order.find({}).then(order => {
+if(userData.isAdmin){
+return order
+}else{
+	return "Cant get all orders you are not an admin"
+}
+
+}
+
+)}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*module.exports.getOrders = (req, res) => {
   return Order.find({ 'user.userId': req.user._id })

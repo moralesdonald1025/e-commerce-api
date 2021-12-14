@@ -79,9 +79,9 @@ return Product.findByIdAndUpdate(reqParams.productId, updatedProduct).then((prod
 		return "Product Updated Successfully"
 	}
 })
-}
+}*/
 
-*/
+
 
 module.exports.updateProduct = (reqParams, userData, reqBody) => {
 

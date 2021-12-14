@@ -56,7 +56,7 @@ module.exports = router;
 
 
 //
-router.get("/orderDetails", auth.verify, (req, res) => {
+/*router.get("/orderDetails", auth.verify, (req, res) => {
 
        	const orderData = auth.decode(req.headers.authorization)	
 	//get all task function
@@ -64,7 +64,7 @@ router.get("/orderDetails", auth.verify, (req, res) => {
 	userController.getAllUsers({ordersId: orderData._ordersId}).then(result => res.send(result));
 })
 
-
+*/
 
 
 
