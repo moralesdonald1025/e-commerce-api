@@ -78,7 +78,7 @@ const userData = auth.decode(req.headers.authorization)
 
 	userController.setAsAdmin(req.params, userData).then(result => res.send(result));
 
-
+})
 
 
 
@@ -88,8 +88,4 @@ const userData = auth.decode(req.headers.authorization)
 
 
 module.exports = router;
-
-
-
-
 
