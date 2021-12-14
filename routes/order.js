@@ -12,13 +12,14 @@ const Order = require("../models/Order")
 
 //let do this order
 router.post("/users/checkout", (req, res, next) => {
-	const order = new Order({
+	let order = new Order({
 		_id: mongoose.Types.ObjectId(),
 		quantity: req.body.quantity,
 		product: req.body.productId,
 		userId: req.body.userId,
 		price: req.body.price,
-		purchasedOn: new Date
+		purchasedOn: new Date,
+		totalAmount: req.body.price * req.body.quantity
 	});
 	order
 	.save()
