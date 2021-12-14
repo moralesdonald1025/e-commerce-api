@@ -17,7 +17,8 @@ purchasedOn: {
 	type: Date
 },
 userId: {
-	type: mongoose.Schema.Types.ObjectId, ref: "product"
+	type: String,
+	 ref: "product"
 }
 
 })
