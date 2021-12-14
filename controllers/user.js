@@ -179,37 +179,6 @@ module.exports.getAllUsers = () => {
 
 
 
-module.exports.getAllOrders =(reqBody) => {
-	return User.find({orderId: reqBody._orderId}).then(result => {
-		return result
-	})
-module.exports.setAsAdmin = (reqParams, userData) => {
-	
-return User.findById(reqParams.id).then(user => {
-if(userData.isAdmin){
-user.id.isAdmin = true
-return user.save().then((saved, err) => {
-if(err){
-return false
-}
-else{
-return true
-}
-})
-}
-else{
-return false
-}
-})
-
-}
-
-
-
-
-
-}
-
 
 //setAsAdmin
 

@@ -82,6 +82,29 @@ router.post("/createOrder", auth.verify, (req, res) => {
 })
 */
 
+//retrieve all orders admin only
+//get method
+router.get("/", auth.verify, (req, res) => {
+
+	const userData = 
+		auth.decode(req.headers.authorization)
+	
+
+/*const userData = auth.decode(req.headers.authorization)	*/
+
+
+	courseController.getAllOrders(req.body, {userData: userData.id, isAdmin:userData.isAdmin}).then(resultFromController => res.send(resultFromController))
+})
+
+
+
+
+
+
+
+
+
+
 
 
 
