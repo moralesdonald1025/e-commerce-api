@@ -195,7 +195,7 @@ module.exports.setAsAdmin = (reqParams, reqBody, userData) => {
 			return "You are not an admin can't assign user as Admin"
 		}else {
 			
-			return reqParams.isAdmin = true 
+			return result.reqBody.isAdmin = true 
 		}
 	})
 
