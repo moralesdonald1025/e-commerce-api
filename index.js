@@ -35,7 +35,7 @@ db.on("error", console.error.bind(console, "connection error"));
 
 db.once("open", () => console.log("Now Connected to my Database"));
 
-app.listen(port, () => console.log(`ecommerce API server is now listening to port ${port}`))
+app.listen(process.env.PORT || port, () => console.log(`ecommerce API server is now listening to port ${process.env.PORT || port}`))
 
 app.get("/api/users/signup", function (req, res) {
 	res.render("index")
