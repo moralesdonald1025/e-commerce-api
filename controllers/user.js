@@ -224,13 +224,13 @@ return User.findByIdAndUpdate(reqParams.userId, setAsAdmin).then((user, error) =
 
 
 
-module.exports.setAsAdmin = (reqParams, reqBody, userData) => {
+module.exports.setAsAdmin = (reqParams, userData) => {
 	
-	return User.findById(userData.userId, reqBody).then(result => {
+	return User.findById(userData.userId).then(result => {
 		if(userData.isAdmin == false){
 			return "You are not an admin can't assign another user as Admin"
 		}else {
-			return reqBody.isAdmin =success
+			return success
 		/*	return User.findById(req.params.userId).then(result => {
 				return result.isAdmin = true
 			})*/

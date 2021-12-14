@@ -76,7 +76,7 @@ router.put("/:userId/setAsAdmin", auth.verify, (req, res) => {
 
 const userData = auth.decode(req.headers.authorization)
 
-	userController.setAsAdmin(req.params, req.body, {userData: userData.id, isAdmin:userData.isAdmin}).then(resultFromController => res.send(resultFromController))
+	userController.setAsAdmin(req.params, {userData: userData.id, isAdmin:userData.isAdmin}).then(resultFromController => res.send(resultFromController))
 })
 
 
