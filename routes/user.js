@@ -72,8 +72,11 @@ router.get("/orderDetails", auth.verify, (req, res) => {
 //set user as Admin
 ///:userId/setAsAdmin
 
-router.put("/:productId/setAsAdmin", auth.verify, (req, res) => {
-	userController.setAsAdmin(req.params, req.body).then(resultFromController => res.send(resultFromController))
+router.put("/:userId/setAsAdmin", auth.verify, (req, res) => {
+
+const userData = auth.decode(req.headers.authorization)
+
+	userController.setAsAdmin(req.params, {userData: userData.id, isAdmin:userData.isAdmin}).then(resultFromController => res.send(resultFromController))
 })
 
 
