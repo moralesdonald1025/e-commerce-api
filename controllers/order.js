@@ -220,7 +220,7 @@ return order
 
 
 
-module.exports.addOrder = (reqBody, userData) => {
+/*module.exports.addOrder = (reqBody, userData) => {
 
     return Order.findById(userData.userId).then(result => {
 
@@ -249,7 +249,7 @@ module.exports.addOrder = (reqBody, userData) => {
         
     });    
 }
-
+*/
 
 
 
