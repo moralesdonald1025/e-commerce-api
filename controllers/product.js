@@ -83,13 +83,13 @@ return Product.findByIdAndUpdate(reqParams.productId, updatedProduct).then((prod
 
 */
 
-module.exports.updateProduct = (reqParams, userData) => {
+module.exports.updateProduct = (reqParams, userData, reqBody) => {
 
 return Product.findById(reqParams.productId).then(product => {
 if(userData.isAdmin){
-		product.name = req.body.name,
-		product.description = req.body.description,
-		product.price = req.body.price
+		product.name = reqBody.name,
+		product.description = reqBody.description,
+		product.price = reqBody.price
 
 return product.save().then((saved, err) => {
 if(err){

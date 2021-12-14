@@ -46,7 +46,7 @@ router.put("/products/:productId", auth.verify, (req, res) => {
 
 	const userData = auth.decode(req.headers.authorization)
 
-	productController.updateProduct(req.params, userData).then(resultFromController => res.send(resultFromController))
+	productController.updateProduct(req.params, userData, req.body).then(resultFromController => res.send(resultFromController))
 })
 
 
