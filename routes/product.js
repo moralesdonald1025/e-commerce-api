@@ -28,7 +28,7 @@ router.get("/allActive", (req, res) => {
 })
 
 //retrieve specific product
-router.get("/:productId", (req, res) => {
+router.get("products/:productId", (req, res) => {
 	console.log(req.params.productId)
 
 	productController.getProduct(req.params).then(resultFromController => res.send(resultFromController));
