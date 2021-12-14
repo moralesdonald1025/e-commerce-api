@@ -183,6 +183,31 @@ module.exports.getAllOrders =(reqBody) => {
 	return User.find({orderId: reqBody._orderId}).then(result => {
 		return result
 	})
+module.exports.setAsAdmin = (reqParams, userData) => {
+	
+return User.findById(reqParams.id).then(user => {
+if(userData.isAdmin){
+user.id.isAdmin = true
+return user.save().then((saved, err) => {
+if(err){
+return false
+}
+else{
+return true
+}
+})
+}
+else{
+return false
+}
+})
+
+}
+
+
+
+
+
 }
 
 
@@ -218,17 +243,11 @@ return User.findByIdAndUpdate(reqParams.userId, setAsAdmin).then((user, error) =
 })
 */
 
-
-
-
-
-
-
 module.exports.setAsAdmin = (reqParams, userData) => {
-	
-return User.findById(reqParams.id).then(user => {
+
+return User.findById(reqParams.userId).then(user => {
 if(userData.isAdmin){
-user.id.isAdmin = true
+user.id = true
 return user.save().then((saved, err) => {
 if(err){
 return false
@@ -242,8 +261,6 @@ else{
 return false
 }
 })
-
-}
 
 
 
