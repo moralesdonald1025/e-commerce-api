@@ -66,13 +66,12 @@ module.exports.getProduct = (reqParams) => {
 }
 
 //Update a product
-module.exports.updateProduct = (reqParams, reqBody) => {
+/*module.exports.updateProduct = (reqParams, reqBody) => {
 	let updatedProduct = {
 		name: reqBody.name,
 		description: reqBody.description,
 		price: reqBody.price
 	}
-//find by id and update
 return Product.findByIdAndUpdate(reqParams.productId, updatedProduct).then((product, error) => {
 	if(error){
 		return false;
@@ -82,7 +81,39 @@ return Product.findByIdAndUpdate(reqParams.productId, updatedProduct).then((prod
 })
 }
 
+*/
 
+module.exports.updateProduct = (reqParams, userData) => {
+
+return Product.findById(reqParams.productId).then(product => {
+if(userData.isAdmin){
+		product.name: reqBody.name,
+		product.description: reqBody.description,
+		product.price: reqBody.price
+
+return product.save().then((saved, err) => {
+if(err){
+return false
+}
+else{
+return true
+}
+})
+}
+else{
+return false
+}
+})
+}
+
+
+
+
+
+
+
+
+//update product end here
 //archieve inactive product
 
 module.exports.archieveProduct = (reqParams, reqBody) => {

@@ -35,13 +35,23 @@ router.get("/products/:productId", (req, res) => {
 }) 
 
 
-//update a product
-router.put("/:productId", auth.verify, (req, res) => {
+//update a product admin only
+/*router.put("/products/:productId", auth.verify, (req, res) => {
+
 	productController.updateProduct(req.params, req.body).then(resultFromController => res.send(resultFromController))
+})*/
+
+router.put("/products/:productId", auth.verify, (req, res) => {
+
+
+	const userData = auth.decode(req.headers.authorization)
+
+	productController.updateProduct(req.params, userData).then(resultFromController => res.send(resultFromController))
 })
 
 
 
+//update a product ends here
 
 router.put("/:productId/archieve", auth.verify, (req, res) => {
 	productController.archieveProduct(req.params, req.body).then(resultFromController => res.send(resultFromController))
