@@ -8,7 +8,7 @@ const Product = require("../models/Product");
 module.exports.signUp = (reqBody) => {
 	return User.find({ email: reqBody.email }).then(result => {
 		if(result.length > 0){
-			return false;
+			return "email already in file";
 
 		}else{
 			//no duplicate email found
