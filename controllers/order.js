@@ -283,18 +283,10 @@ module.exports.getMyOrders = (reqBody, userData) => {
 
 module.exports.addOrderTest = (reqBody, userData) => {
 
-   return Order.findById(userData.userId).then(result => {
+   return Order.findById(userData.userId, reqBody).then(result => {
 
 
-   	let newOrder = new Order({
-		email: reqBody.email,
-		quantity: reqBody.quantity,
-		product: reqBody.productId,
-		userId: reqBody.userId,
-		price: reqBody.price,
-		purchasedOn: new Date,
-		totalAmount: reqBody.price * reqBody.quantity
-	});
+   	
 
 
 
@@ -302,9 +294,17 @@ module.exports.addOrderTest = (reqBody, userData) => {
             return "You are an admin can't order product"
         } else {
             
-        
+    let order = new Order({
+		email: reqBody.email,
+		quantity: reqBody.quantity,
+		product: reqBody.productId,
+		userId: reqBody.userId,
+		price: reqBody.price,
+		purchasedOn: new Date,
+		totalAmount: reqBody.price * reqBody.quantity
+	});    
             //Saves the created object to the database
-            return newOrder.save().then((order, error) => {
+            return order.save().then((order, error) => {
                 //if Product creation failed
                 if(error) {
                     return false
