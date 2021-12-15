@@ -298,23 +298,17 @@ module.exports.addOrderTest = (reqBody, userData) => {
 		purchasedOn: new Date,
 		totalAmount: req.body.price * req.body.quantity
 		});
-           return order
-	.save()
-        
-            //Saves the created object to the database
-           	.then(result => {
-		console.log(result);
-		res.status(201).json(result);
-	})
-	.catch(err => {
-		console.log(err);
-		res.status(500).json({
-			error: err
-		})
-	
-	})
+
+        return order.save().then((order, error) => {
+                //if Product creation failed
+                if(error) {
+                    return false
+                } else {
+                    //Product creation successful
+                    return "Product creation successful"
+                }
+            })
         }
-        
     });    
 }
 
