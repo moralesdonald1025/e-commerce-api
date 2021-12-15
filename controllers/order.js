@@ -292,7 +292,7 @@ module.exports.addOrderTest = (reqBody, userData) => {
 //this is good
         if (!userData.isAdmin) {
 
-   	order.push({email: reqBody.email,
+   	let order = ({email: reqBody.email,
 		quantity: reqBody.quantity,
 		product: reqBody.productId,
 		userId: reqBody.userId,
