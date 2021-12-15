@@ -53,7 +53,7 @@ router.post("/order/test", auth.verify, (req, res) => {
 
 
 
-	orderController.addOrderTest(req.body, {userData: userData.id, isAdmin:userData.isAdmin}).then(resultFromController => res.send(resultFromController))
+	orderController.addOrderTest(req.body, userData).then(resultFromController => res.send(resultFromController))
 })
 
 
