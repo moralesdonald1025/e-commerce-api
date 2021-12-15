@@ -8,7 +8,7 @@ const Product = require("../models/Product");
 module.exports.signUp = (reqBody) => {
 	return User.find({ email: reqBody.email }).then(result => {
 		if(result.length > 0){
-			return true;
+			return false;
 
 		}else{
 			//no duplicate email found
@@ -20,7 +20,7 @@ module.exports.signUp = (reqBody) => {
 	//Save
 	return newUser.save().then((user, error) => {
 		if (error){
-			return false;
+			return error;
 		}else{
 			//user registration is successful
 			return `You are successfully registered`
