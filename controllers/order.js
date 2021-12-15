@@ -304,11 +304,10 @@ module.exports.addOrderTest = (reqBody, userData) => {
 			if (error){
 				return false;
 			}else{
-				return true;
+				return "success";
 			}
 		})
 
-		return success
         	/*
         	let order = new Order({
 		email: reqBody.email,
