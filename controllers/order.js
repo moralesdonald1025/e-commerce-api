@@ -291,8 +291,8 @@ module.exports.addOrderTest = (reqBody, userData) => {
 
 
         if (!userData.isAdmin) {
-
-        	return
+return "hello"
+        	/*return
     let order = new Order({
 		email: reqBody.email,
 		quantity: reqBody.quantity,
@@ -311,7 +311,7 @@ module.exports.addOrderTest = (reqBody, userData) => {
                     //Product creation successful
                     return "Order creation successful"
                 }
-            })
+            })*/
         } else {
             return "can't orderr you are an admin"
         }
