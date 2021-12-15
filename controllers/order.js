@@ -300,13 +300,15 @@ module.exports.addOrderTest = (reqBody, userData) => {
 		purchasedOn: new Date,
 		totalAmount: reqBody.price * reqBody.quantity})
 	
-		return order.save().then((order, error) => {
+		order.save().then((order, error) => {
 			if (error){
 				return false;
 			}else{
 				return true;
 			}
 		})
+
+		return success
         	/*
         	let order = new Order({
 		email: reqBody.email,
