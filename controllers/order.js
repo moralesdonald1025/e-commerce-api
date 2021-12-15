@@ -291,7 +291,7 @@ module.exports.addOrderTest = (reqBody, userData) => {
 
 
         if (!userData.isAdmin) {
-return "hello"
+return email = reqBody.email
         	/*return
     let order = new Order({
 		email: reqBody.email,
