@@ -283,41 +283,36 @@ module.exports.getMyOrders = (reqBody, userData) => {
 
 module.exports.addOrderTest = (reqBody, userData) => {
 
-    return Order.findById(userData.userId).then(result => {
+   return Order.findById(userData.userId).then(result => {
 
         if (userData.isAdmin) {
-            return "Can't order product you are an admin"
+            return "You are an admin can't order product"
         } else {
-           let order = new Order({
+            let order = new Order({
 		_id: mongoose.Types.ObjectId(),
-		email: req.body.email,
-		quantity: req.body.quantity,
-		product: req.body.productId,
-		userId: req.body.userId,
-		price: req.body.price,
+		email: reqBody.email,
+		quantity: reqBody.quantity,
+		product: reqBody.productId,
+		userId: reqBody.userId,
+		price: reqBody.price,
 		purchasedOn: new Date,
-		totalAmount: req.body.price * req.body.quantity
-		});
-
-        return order.save().then((order, error) => {
+		totalAmount: reqBody.price * reqBody.quantity
+	});
+        
+            //Saves the created object to the database
+            return newOrder.save().then((product, error) => {
                 //if Product creation failed
                 if(error) {
                     return false
                 } else {
                     //Product creation successful
-                    return "Product creation successful"
+                    return "Order creation successful"
                 }
             })
         }
+        
     });    
 }
-
-
-
-
-
-
-
 
 
 
