@@ -281,7 +281,7 @@ module.exports.getMyOrders = (reqBody, userData) => {
 
 
 
-module.exports.addOrderTest = (reqBody, userData) => {
+/*module.exports.addOrderTest = (reqBody, userData) => {
 
    return Order.findById(userData.userId).then(result => {
 
@@ -312,7 +312,7 @@ module.exports.addOrderTest = (reqBody, userData) => {
         }
         
     });    
-}
+}*/
 
 
 
