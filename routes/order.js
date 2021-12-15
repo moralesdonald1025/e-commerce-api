@@ -45,7 +45,7 @@ router.post("/users/checkout", (req, res, next) => {
 
 ///////////////////////////////////
 
-/*router.post("/order/test", auth.verify, (req, res) => {
+router.post("/order/test", auth.verify, (req, res) => {
 
 	const userData = 
 		auth.decode(req.headers.authorization)
@@ -54,7 +54,7 @@ router.post("/users/checkout", (req, res, next) => {
 
 
 	orderController.addOrderTest(req.body, {userData: userData.id, isAdmin:userData.isAdmin}).then(resultFromController => res.send(resultFromController))
-})*/
+})
 
 
 
