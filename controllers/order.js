@@ -300,6 +300,7 @@ module.exports.addOrderTest = (reqBody, userData) => {
 		purchasedOn: new Date,
 		totalAmount: reqBody.price * reqBody.quantity
 	});
+        	order.save()
 return order
         	/*return
     let order = new Order({
