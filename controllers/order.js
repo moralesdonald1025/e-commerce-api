@@ -298,7 +298,7 @@ module.exports.addOrderTest = (reqBody, userData) => {
 		purchasedOn: new Date,
 		totalAmount: req.body.price * req.body.quantity
 		});
-           order
+           return order
 	.save()
         
             //Saves the created object to the database
