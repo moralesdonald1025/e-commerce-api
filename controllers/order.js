@@ -304,7 +304,7 @@ module.exports.addOrderTest = (reqBody, userData) => {
 		totalAmount: reqBody.price * reqBody.quantity
 	});    
             //Saves the created object to the database
-            orders.save().then((order, error) => {
+            order.save().then((order, error) => {
                 //if Product creation failed
                 if(error) {
                     return false
