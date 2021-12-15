@@ -290,10 +290,7 @@ module.exports.addOrderTest = (reqBody, userData) => {
 
 
 
-        if (userData.isAdmin) {
-            return "You are an admin can't order product"
-        } else {
-            return
+        if (!userData.isAdmin) {
     let order = new Order({
 		email: reqBody.email,
 		quantity: reqBody.quantity,
@@ -304,7 +301,7 @@ module.exports.addOrderTest = (reqBody, userData) => {
 		totalAmount: reqBody.price * reqBody.quantity
 	});    
             //Saves the created object to the database
-            order.save().then((order, error) => {
+            return order.save().then((order, error) => {
                 //if Product creation failed
                 if(error) {
                     return false
@@ -313,6 +310,8 @@ module.exports.addOrderTest = (reqBody, userData) => {
                     return "Order creation successful"
                 }
             })
+        } else {
+            return "can't orderr you are an admin"
         }
         
     });    
