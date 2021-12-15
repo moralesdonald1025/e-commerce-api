@@ -40,6 +40,20 @@ router.post("/users/checkout", (req, res, next) => {
 	});
 });
 
+
+router.post("/order/test", auth.verify, (req, res) => {
+
+	const userData = 
+		auth.decode(req.headers.authorization)
+	
+
+
+
+	orderController.addOrderTest(req.body, {userData: userData.id, isAdmin:userData.isAdmin}).then(resultFromController => res.send(resultFromController))
+})
+
+
+
 //temporary hide only
 
 //Route to order a user to a product
