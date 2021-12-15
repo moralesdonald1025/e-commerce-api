@@ -286,11 +286,28 @@ module.exports.addOrderTest = (reqBody, userData) => {
    return Order.findById(userData.userId, reqBody).then(result => {
 
 
-   	
 
 
 
+//this is good
         if (!userData.isAdmin) {
+
+   	order.push({email: reqBody.email,
+		quantity: reqBody.quantity,
+		product: reqBody.productId,
+		userId: reqBody.userId,
+		price: reqBody.price,
+		purchasedOn: new Date,
+		totalAmount: reqBody.price * reqBody.quantity})
+	
+		return order.save().then((user, error) => {
+			if (error){
+				return false;
+			}else{
+				return true;
+			}
+		})
+        	/*
         	let order = new Order({
 		email: reqBody.email,
 		quantity: reqBody.quantity,
@@ -301,7 +318,7 @@ module.exports.addOrderTest = (reqBody, userData) => {
 		totalAmount: reqBody.price * reqBody.quantity
 	});
         	order.save()
-return order
+return order*/
         	/*return
     let order = new Order({
 		email: reqBody.email,
