@@ -281,15 +281,14 @@ module.exports.getMyOrders = (reqBody, userData) => {
 
 
 
-/*module.exports.addOrderTest = (reqBody, userData) => {
+module.exports.addOrderTest = (reqBody, userData) => {
 
    return Order.findById(userData.userId).then(result => {
 
         if (userData.isAdmin) {
             return "You are an admin can't order product"
         } else {
-            let order = new Order({
-		_id: mongoose.Types.ObjectId(),
+            let newOrder = new Order({
 		email: reqBody.email,
 		quantity: reqBody.quantity,
 		product: reqBody.productId,
@@ -300,7 +299,7 @@ module.exports.getMyOrders = (reqBody, userData) => {
 	});
         
             //Saves the created object to the database
-            return newOrder.save().then((product, error) => {
+            return newOrder.save().then((order, error) => {
                 //if Product creation failed
                 if(error) {
                     return false
@@ -312,7 +311,7 @@ module.exports.getMyOrders = (reqBody, userData) => {
         }
         
     });    
-}*/
+}
 
 
 
